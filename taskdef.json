@@ -23,7 +23,7 @@
         }
       ],
       "name": "simple-app",
-      "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
+      "image": "720790495971.dkr.ecr.us-east-2.amazonaws.com/ecs-cicd-jenkins",
       "cpu": 0
     }
   ],
