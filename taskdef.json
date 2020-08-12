@@ -1,75 +1,67 @@
 {
-  "networkMode": "bridge",
-  "containerDefinitions": [
-    {
-      "memory": 128,
-      "portMappings": [
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::720790495971:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
         {
-          "hostPort": 0,
-          "containerPort": 80,
-          "protocol": "tcp"
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": null,
+                "options": {
+                    "awslogs-group": "/ecs/ecs-cicd-jenkins-simple-app",
+                    "awslogs-region": "us-east-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": null,
+            "portMappings": [],
+            "command": null,
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [],
+            "workingDirectory": null,
+            "secrets": null,
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "720790495971.dkr.ecr.us-east-2.amazonaws.com/ecs-cicd-jenkins",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "simple-app"
         }
-      ],
-      "essential": true,
-      "entryPoint": [
-        "/usr/sbin/apache2",
-        "-D",
-        "FOREGROUND"
-      ],
-      "mountPoints": [
-        {
-          "containerPath": "/var/www/my-vol",
-          "sourceVolume": "my-vol"
-        }
-      ],
-      "name": "simple-app",
-      "image": "{
-  "networkMode": "bridge",
-  "containerDefinitions": [
-    {
-      "memory": 128,
-      "portMappings": [
-        {
-          "hostPort": 0,
-          "containerPort": 80,
-          "protocol": "tcp"
-        }
-      ],
-      "essential": true,
-      "entryPoint": [
-        "/usr/sbin/apache2",
-        "-D",
-        "FOREGROUND"
-      ],
-      "mountPoints": [
-        {
-          "containerPath": "/var/www/my-vol",
-          "sourceVolume": "my-vol"
-        }
-      ],
-      "name": "simple-app",
-      "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
-      "cpu": 0
-    }
-  ],
-  "volumes": [
-    {
-      "host": {
-      },
-      "name": "my-vol"
-    }
-  ],
-  "family": "ecs-cicd-jenkins-simple-app"
-}",
-      "cpu": 0
-    }
-  ],
-  "volumes": [
-    {
-      "host": {
-      },
-      "name": "my-vol"
-    }
-  ],
-  "family": "ecs-cicd-jenkins-simple-app"
+    ],
+    "memory": "512",
+    "taskRoleArn": "arn:aws:iam::720790495971:role/ecsTaskExecutionRole",
+    "family": "ecs-cicd-jenkins-simple-app",
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "inferenceAccelerators": [],
+    "proxyConfiguration": null,
+    "volumes": [],
+    "tags": []
 }
